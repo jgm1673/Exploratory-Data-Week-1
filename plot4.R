@@ -1,10 +1,11 @@
 ## Week 1 Exercise, Plot 4 - 4-square plots
 ## Read in file from current directory
 power<-read.table("household_power_consumption.txt", sep=";", header=TRUE,
-                  colClasses = c("character", "character", "numeric", "numeric", "numeric","numeric", "numeric", "numeric", "numeric" ), na.strings="?")
+                  colClasses = c("character", "character", "numeric", "numeric", "numeric","numeric", "numeric", "numeric", "numeric" ),
+                  na.strings="?")
 ## Select columns of interest
 
-#base<-select(power, Date, Time, Global_active_power, Global_reactive_power, Sub_metering_1, Sub_metering_2, Sub_metering_3)
+#
 power$Date<-as.POSIXct(strptime(power$Date, format = "%d/%m/%Y"))
 power<-filter(power, Date==as.POSIXct("2007-2-2") | Date==as.POSIXct("2007-2-1"))
 
