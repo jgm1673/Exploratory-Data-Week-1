@@ -1,7 +1,8 @@
 ## Week 1 Exercise, Plot 2 - Global Active Power vs time 
 ## Read in file from current directory
 power<-read.table("household_power_consumption.txt", sep=";", header=TRUE,
-                  colClasses = c("character", "character", "numeric", "numeric", "numeric","numeric", "numeric", "numeric", "numeric" ), na.strings="?")
+                  colClasses = c("character", "character", "numeric", "numeric", "numeric","numeric", "numeric", "numeric", "numeric" ), 
+                  na.strings="?")
 ## Select columns of interest
 
 base<-select(power, Date, Time, Global_active_power)
